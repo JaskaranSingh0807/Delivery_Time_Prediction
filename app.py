@@ -41,3 +41,8 @@ features = [Age,Ratings,distance,order_Drinks,order_Meal,order_snack,vehicle_Ele
 if st.button("Predict Delivery Time"):
     prediction = predict_delivery_time(features)
     st.write(f"Predicted Delivery Time: {prediction[0]} minutes")
+
+# Predict and display the result
+if st.button("Predict Delivery Time"):
+    prediction = predict_delivery_time(features)
+    st.write(f"Predicted Delivery Time: {prediction[0]} minutes")
