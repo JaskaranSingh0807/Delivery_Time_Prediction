@@ -41,7 +41,7 @@ features = [Age,Ratings,distance,order_Drinks,order_Meal,order_snack,vehicle_Ele
 if st.button("Predict Delivery Time", key="predict_button"):
     try:
         prediction = predict_delivery_time(features)
-        st.write(f"Predicted Delivery Time: {prediction} minutes")
+        st.write(f"Predicted Delivery Time: {prediction[0]} minutes")
     except ValueError as e:
         st.write(f"Error: {e}")
 
