@@ -2,15 +2,16 @@ import streamlit as st
 import pickle
 
 # Load the model
-model_path = "Delivery_rf.pkl"
+model_path = "c:\\Users\\hp\\Desktop\\Machine Learning\\Delivery_rf.pkl"
 with open(model_path, 'rb') as file:
     model = pickle.load(file)
 
 # Define the prediction function
+
 def predict_delivery_time(features):
     # Ensure features are in the right shape for the model
-    prediction = model[1].predict([features])
-    return prediction[0]
+    prediction = model[0].predict([features])
+    return prediction
 
 # Streamlit interface
 st.title("Delivery Time Prediction")
@@ -40,9 +41,3 @@ features = [Age,Ratings,distance,order_Drinks,order_Meal,order_snack,vehicle_Ele
 if st.button("Predict Delivery Time"):
     prediction = predict_delivery_time(features)
     st.write(f"Predicted Delivery Time: {prediction[0]} minutes")
-
-
-# Predict and display the result
-if st.button("Predict Delivery Time"):
-    prediction = predict_delivery_time(features)
-    st.write(f"Predicted Delivery Time: {prediction} minutes")
