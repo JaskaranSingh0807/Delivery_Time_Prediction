@@ -38,11 +38,14 @@ vehicle_scooter= 1 if vehicle == "Scooter" else 0
 features = [Age,Ratings,distance,order_Drinks,order_Meal,order_snack,vehicle_Elec,vehicle_motor,vehicle_scooter]
 
 # Predict and display the result
-if st.button("Predict Delivery Time"):
-    prediction = predict_delivery_time(features)
-    st.write(f"Predicted Delivery Time: {prediction[0]} minutes")
+if st.button("Predict Delivery Time", key="predict_button"):
+    try:
+        prediction = predict_delivery_time(features)
+        st.write(f"Predicted Delivery Time: {prediction} minutes")
+    except ValueError as e:
+        st.write(f"Error: {e}")
 
 # Predict and display the result
-if st.button("Predict Delivery Time"):
-    prediction = predict_delivery_time(features)
-    st.write(f"Predicted Delivery Time: {prediction[0]} minutes")
+#if st.button("Predict Delivery Time"):
+ #   prediction = predict_delivery_time(features)
+  #  st.write(f"Predicted Delivery Time: {prediction[0]} minutes")
